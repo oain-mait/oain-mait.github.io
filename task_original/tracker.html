@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+
+<!--
+
+
+
+	" Reimplement the wheel to either learn, or make it better. "
+
+    http://www.haydex.com/
+    https://www.youtube.com/watch?v=QOlTGA3RE8I
+    
+    Product Name: YouTubeTracker,
+	Description: Tracking YouTube"s data.
+	Beneficiary: COSMOS
+	
+	Copyright © 1992 - 2019 HAYDEX, All Rights Reserved.
+	
+	
+	
+-->
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="author" content="HAYDEX">
+        <meta name="description" content="Tracking YouTube videos.">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+        <title>Tracker - YouTubeTracker</title>
+        
+        <!-- Favicons -->
+        <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/youtubetracker-apple-touch-favicon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/youtubetracker-favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon/youtubetracker-favicon-16x16.png"> <!-- https://mobiforge.com/design-development/adding-favicons-in-a-multi-browser-multi-platform-world -->
+
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="assets/presentation/tracker.css"/>
+        
+        <script src="assets/behavior/tracker.js"></script>
+
+    </head>
+    <body>
+        
+        <!-- Header -->
+        <header>
+            <a href="landing.html" id="logo"></a>
+            <nav>
+                <ul>
+                    <a href="home.html">
+                        <li id="homeLink" class="navigationButton">
+                            <div id="homeIcon" class="navIcon"></div>
+                            <p id="home">Home</p>
+                        </li>
+                    </a>
+                    <a href="trackers.html">
+                        <li id="trackersLink" class="navigationButton">
+                            <div id="trackersIcon" class="navIcon"></div>
+                            <p id="trackers">Trackers</p>
+                        </li>
+                    </a>
+                    <a href="">
+                        <li id="favoritesLink" class="navigationButton">
+                            <div id="favoritesIcon" class="navIcon"></div>
+                            <p id="favorites">Favorites</p>
+                        </li>
+                    </a>
+                </ul>
+            </nav>
+            <div id="username">
+                <div id="photo">
+                    <div id="indicator" class="active"></div>
+                </div>
+                <div id="name">Steven</div>
+                <div id="menu"></div>
+                <div id="arrow"></div>
+            </div>
+        </header>
+
+        <!-- Content -->
+        <main id="content">
+            <div id="head">
+                <div id="title">Middle East Tracker</div>
+                <div id="tools">
+                    <button id="analytics"><div id="icon"></div></button>
+                    <button id="edit"><div id="icon"></div></button>
+                    <button id="refresh"><div id="icon"></div></button>
+                    <button id="delete"><div id="icon"></div></button>
+                </div>
+            </div>
+            <div id="dates">
+                <div id="created">Created | 22-07-2018 . 05:30pm</div>
+                <div id="modified">Modified | 22-07-2018 . 05:30pm</div>
+                <div id="Crawled">Crawled | 22-07-2018 . 05:30pm</div>
+            </div>
+            <div id="description">Element represents a range of text that is set off from the normal text for some reason. Some examples include technical terms, foreign language phrases, or fictional character thoughts. It is typically displayed in italic type. An HTML element is an individual component of an HTML (Hypertext Markup Language) document or web page. HTML is composed
+            of a tree of HTML nodes.</div>
+            <div id="statistics">
+                <div id="videos" class="metric">
+                    <div id="count">334K</div>
+                    <div id="label">Videos</div>
+                </div>
+                <div id="channels" class="metric">
+                    <div id="count">43M</div>
+                    <div id="label">Channels</div>
+                </div>
+                <div id="comments" class="metric">
+                    <div id="count">11B</div>
+                    <div id="label">Comments</div>
+                </div>
+            </div>
+            <div id="videosChannels">
+                <div id="label">List of Videos/Channels</div>
+                <ul id="list">
+                    <li id="video">
+                        <img id="photo" src="assets/images/search/20.jpg">
+                        <div id="wrapper">
+                            <h2 id="title"><a href="">Dwayne Johnson Reveals Kevin Hart's Awkward Teen Photo</a></h2>
+                            <p id="channel">Engadget</p>
+                            <span id="separator">·</span>
+                            <p id="date">May 20 2019 06:55 PM</p>
+                            <button id="trackStatusButton" title="Click to see list of trackers.">0 TRACKS</button>
+                            <button id="delete"></button>
+                        </div>
+                    </li>
+                    <li id="video">
+                        <img id="photo" src="assets/images/search/5.jpg">
+                        <div id="wrapper">
+                            <h2 id="title"><a href="">Real Life Trick Shots 2 | Dude Perfect</a></h2>
+                            <p id="channel">Engadget</p>
+                            <span id="separator">·</span>
+                            <p id="date">May 20 2019 06:55 PM</p>
+                            <button id="trackStatusButton" title="Click to see list of trackers.">0 TRACKS</button>
+                            <button id="delete"></button>
+                        </div>
+                    </li>
+                    <li id="video">
+                        <img id="photo" src="assets/images/search/8.jpg">
+                        <div id="wrapper">
+                            <h2 id="title"><a href="">IT CHAPTER TWO - Official Teaser Trailer [HD]</a></h2>
+                            <p id="channel">Engadget</p>
+                            <span id="separator">·</span>
+                            <p id="date">May 20 2019 06:55 PM</p>
+                            <button id="trackStatusButton" title="Click to see list of trackers.">0 TRACKS</button>
+                            <button id="delete"></button>
+                        </div>
+                    </li>
+                    <li id="video">
+                        <img id="photo" src="assets/images/search/10.jpg">
+                        <div id="wrapper">
+                            <h2 id="title"><a href="">Winter Bear by V</a></h2>
+                            <p id="channel">Engadget</p>
+                            <span id="separator">·</span>
+                            <p id="date">May 20 2019 06:55 PM</p>
+                            <button id="trackStatusButton" title="Click to see list of trackers.">0 TRACKS</button>
+                            <button id="delete"></button>
+                        </div>
+                    </li>
+                    <li id="video">
+                        <img id="photo" src="assets/images/search/15.jpg">
+                        <div id="wrapper">
+                            <h2 id="title"><a href="">Lil Dicky - Professional Rapper (Feat. Snoop Dogg)</a></h2>
+                            <p id="channel">Engadget</p>
+                            <span id="separator">·</span>
+                            <p id="date">May 20 2019 06:55 PM</p>
+                            <button id="trackStatusButton" title="Click to see list of trackers.">0 TRACKS</button>
+                            <button id="delete"></button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+    </body>
+</html>

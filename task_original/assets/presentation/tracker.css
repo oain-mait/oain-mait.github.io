@@ -1,0 +1,620 @@
+/*
+
+
+
+    " Reimplement the wheel to either learn, or make it better. "
+
+    http://www.hayder.design/
+    https://www.youtube.com/watch?v=QOlTGA3RE8I
+    
+    Product Name: YouTubeTracker,
+	Description: Tracking YouTube"s data.
+	Beneficiary: COSMOS
+	
+	Copyright © 1992 - 2019 HAYDER, All Rights Reserved.
+	
+	
+	
+*/
+
+/** Global settings **/
+
+:root {
+    
+    /* colors */
+
+    --reddish: #fd4444;
+    --reddishLight: rgb(255, 113, 113);
+    --reddishLight2: rgb(253, 68, 68, 0.4);
+    --blackish: #242120;
+    --blackish2: #2c2928;
+    --shadow: rgb(0, 0, 0, 0.5);
+    --blackishTransparent0: rgb(36, 33, 32, 0.9);
+    --blackishTransparent1: rgb(36, 33, 32, 0.3);
+    --blackishTransparent2: rgb(36, 33, 32, 0.2);
+    --blackishTransparent3: rgb(36, 33, 32, 0);
+    --blackishTransparent4: rgb(36, 33, 32, 0);
+    --blackishTransparent5: rgba(36, 33, 32, 0.90);
+    --blackishShadow: hsla(15, 6%, 13%, 0.3);
+    --littleGrey: hsla(15, 6%, 20%, 0.9);
+    --littleGrey2: hsla(15, 6%, 25%, 1);
+    --greyishDark: hsla(15, 6%, 40%, 0.3);
+    --greyish: hsla(15, 6%, 40%, 1);
+    --lightGreyish: hsla(15, 6%, 60%, 1);
+    --lighterGreyish: rgb(230, 230, 230);
+    --whitish: hsla(15, 6%, 100%, 1);
+    --whitishTransparent1: hsla(15, 6%, 100%, 0.9);
+    --blueish: #2C8DFF;
+    --lightBlueish: rgb(136, 191, 255);
+    --lightBlueish1: rgb(75, 159, 255);
+
+    /* fonts */
+
+    --size12: 12px;
+    --size14: 14px;
+    --size16: 16px;
+    --size18: 18px;
+    --size22: 22px;
+    --size28: 28px;
+    --size30: 30px;
+    --size34: 34px;
+    --size38: 38px;
+    --size48: 48px;
+    --size58: 58px;
+
+    /* radius */
+
+    --radius5: 5px;
+    --radius13: 13px;
+    --radius15: 15px;
+    --radius25: 25px;
+    --radius1000: 1000px;
+
+    /* images */
+
+    --homeInterface: url(../images/home-interface.svg);
+    
+}
+
+html {
+
+    color: var(--whitish);
+    font-family: "Roboto", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    box-sizing: border-box; /* https://www.w3schools.com/css/css3_box-sizing.asp   https://www.youtube.com/watch?v=ADDvQlerEx4&list=PLu8EoSxDXHP5CIFvt9-ze3IngcdAc2xKG&index=2 */
+
+}
+
+body {
+
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, auto);
+    grid-template-areas:
+        "Header"
+        "Search"
+        "Options"
+        "Content"
+        "Footer";
+    
+	background-color:var(--blackish);
+    margin: 0px;
+    box-sizing: inherit;
+
+}
+
+body.noScroll {
+
+    overflow: hidden;
+    
+}
+
+a {
+
+    text-decoration: none;
+    color: inherit;
+
+}
+
+a:hover {
+
+    color: inherit;
+
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
+
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+
+}
+
+/** Header **/
+
+header {
+
+    display: flex;
+    position: fixed;
+    grid-area: Header;
+    justify-content: center;
+    text-align: center;
+    top:0px;
+    width: 100%;
+    background-color: var(--blackish);
+    height: 60px;
+
+    z-index: 10000;
+
+}
+
+header.scroll {
+
+    z-index: 10000;
+
+}
+
+header a#logo {
+
+    position: absolute;
+    align-self: center;
+    left: 0px;
+    margin-left: 20px;
+    width: 235px;
+    height: 25px;
+    background-image: var(--homeInterface);
+    background-repeat: no-repeat;
+    background-position: -11px -11px;
+
+}
+
+header.scroll a#logo {
+
+    background-position: -11px -51px;
+
+}
+
+header a#logo:hover {
+
+    opacity: 0.8;
+
+}
+
+header nav {
+
+    white-space: nowrap;
+
+}
+
+header.scroll nav {
+
+    display: none;
+
+}
+
+header div.navIcon {
+    
+    display: inline-flex;
+    align-self: center;
+    background-repeat: no-repeat;
+    margin-right: 0px;
+
+}
+
+header div#homeIcon {
+
+    width: 20px;
+    height: 19px;
+    background-image: var(--homeInterface);
+    background-position: -38px -337px;
+    
+
+}
+
+header div#trackersIcon {
+
+    width: 22px;
+    height: 19px;
+    background-image: var(--homeInterface);
+    background-position: -11px -337px;
+
+}
+
+header div#favoritesIcon {
+
+    width: 20px;
+    height: 19px;
+    background-image: var(--homeInterface);
+    background-position: -64px -337px;
+
+}
+
+li.navigationButton {
+
+    color: var(--whitish);
+    display: inline-block;
+    background-color: var(--blackish);
+    width: 150px;
+    height: 45px;
+    line-height: 50px;
+    font-size: var(--size22);
+    font-weight: 400;
+    margin-left: 2px;
+    margin-right: 2px;
+    border-radius: var(--radius1000);
+    margin-top: 5px;
+    margin-bottom: 5px;
+    cursor: hand;
+    cursor: pointer;
+    
+}
+
+li.navigationButton:hover {
+
+    background-color: var(--greyish);
+
+}
+
+li.navigationButton.selected {
+
+    background-color: var(--reddish);
+
+}
+
+li.navigationButton p {
+
+    display: inline-block;
+    line-height: 45px;
+    vertical-align: top;
+
+}
+
+header div#username {
+
+    display: flex;
+    position: absolute;
+    align-self: center;
+    white-space: nowrap;
+    right: 0px;
+    margin-right: 20px;
+
+}
+
+header div#username div#photo {
+
+    align-self: center;
+    position: relative;
+    display: inline-flex;
+    width: 30px;
+    height: 30px;
+    border: 2px solid var(--whitish);
+    border-radius: var(--radius1000);
+
+}
+
+header div#username div#indicator.active {
+
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    top: -3px;
+    right: -3px;
+    border-radius: var(--radius1000);
+    background-color: var(--reddish);
+
+}
+
+header div#username div#name {
+
+    display: inline-block;
+    font-weight: 600;
+    height: 50px;
+    line-height: 50px;
+    vertical-align: top;
+    margin-left: 10px;
+
+}
+
+header div#username div#menu {
+
+    display: inline-flex;
+    align-self: center;
+    width: 20px;
+    height: 17px;
+    margin-left: 20px;
+    background-image: var(--homeInterface);
+    background-position: -74px -291px;
+    background-repeat: no-repeat;
+    cursor: hand;
+    cursor: pointer;
+    
+}
+
+header div#username div#menu:hover {
+
+    opacity: 0.8;
+
+}
+
+div#separator.scroll {
+
+    margin-top: 60px;
+
+}
+
+/** Content **/
+
+main#content {
+
+    margin: 0px auto;
+    margin-top: 120px;
+    width: 1100px;
+    
+}
+
+main#content div#head {
+
+    display: flex;
+    position: relative;
+    
+}
+
+main#content div#head div#title {
+
+    
+    font-size: var(--size58);
+    
+}
+
+main#content div#head div#tools {
+
+    position: absolute;
+    right: 0px;
+
+}
+
+main#content div#head div#tools button {
+
+    display: inline-flex;
+    position: relative;
+    justify-content: center;
+    margin: 5px;
+    outline:0;
+    padding: 30px;
+    border: 1px solid var(--littleGrey2);
+    border-radius: var(--radius1000);
+    background-color: transparent;
+    
+    cursor: hand;
+    cursor: pointer;
+
+}
+
+main#content div#head div#tools button:hover {
+
+    opacity: 0.5;
+
+}
+
+main#content div#head div#tools button div#icon {
+
+    display: inline-flex;
+    position: absolute;
+    align-self: center;
+    justify-self: center;
+    height: 32px;
+    background-image: var(--homeInterface);
+    background-repeat: no-repeat;
+    background-position-y: -234px;
+
+}
+
+main#content div#head div#tools button#analytics div#icon {
+
+    width: 26px;
+    background-position-x: -349px;
+
+}
+
+main#content div#head div#tools button#edit div#icon {
+
+    width: 22px;
+    background-position-x: -376px;
+
+}
+
+main#content div#head div#tools button#refresh div#icon {
+
+    width: 26px;
+    background-position-x: -399px;
+
+}
+
+main#content div#head div#tools button#delete div#icon {
+
+    width: 26px;
+    background-position-x: -322px;
+
+}
+
+main#content div#dates div {
+
+    display: inline-flex;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 10px;
+    border: 2px solid var(--littleGrey2);
+    border-radius: var(--radius5);
+    margin-right: 10px;
+
+}
+
+main#content div#description {
+
+    margin-top: 20px;
+
+}
+
+main#content div#statistics {
+
+    display: flex;
+    margin-top: 60px;
+
+}
+
+main#content div#statistics div.metric {
+
+    margin-right: 100px;
+
+}
+
+main#content div#statistics div.metric div#count {
+
+    font-size: var(--size48);
+    color: var(--reddish);
+
+}
+
+main#content div#videosChannels {
+
+    margin-top: 60px;
+
+}
+
+main#content div#videosChannels div#label {
+
+    font-size: var(--size34);
+
+}
+
+main#content div#videosChannels ul#list {
+
+    margin-top: 30px;
+    list-style: none;
+
+}
+
+main#content div#videosChannels ul#list li {
+
+    display: flex;
+    height: 130px;
+    margin-bottom: 10px;
+    background-color: var(--littleGrey);
+    border-radius: var(--radius15);
+
+}
+
+main#content div#videosChannels ul#list li img {
+
+    display: inline-flex;
+    width: 20%;
+    height: 100%;
+    object-fit: cover;
+    border-top-left-radius: var(--radius15);
+    border-bottom-left-radius: var(--radius15);
+
+}
+
+main#content div#videosChannels ul#list li div#wrapper {
+
+    position: relative;
+    padding: 20px;
+    width: 80%;
+
+}
+
+main#content div#videosChannels ul#list li div#wrapper h2#title {
+
+    font-size: var(--size18);
+    font-weight: 400;
+
+}
+
+main#content div#videosChannels ul#list li div#wrapper p#channel {
+
+    font-size: var(--size14);
+    opacity: 0.5;
+    display:inline-flex;
+
+}
+
+main#content div#videosChannels ul#list li div#wrapper p#date {
+
+    font-size: var(--size14);
+    opacity: 0.5;
+    display:inline-flex;
+
+}
+
+main#content div#videosChannels ul#list li div#wrapper button#trackStatusButton {
+    
+    display: flex;
+    background-color: var(--blackish);
+    color: var(--whitish);
+    border-radius: var(--radius1000);
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: var(--size14);
+    font-weight: 600;
+    border: 2px solid var(--whitish);
+    outline: 0px;
+    vertical-align: middle;
+    cursor: hand;
+    cursor: pointer;
+    user-select: none;
+    opacity: 0.2;
+    margin-top: 10px;
+
+}
+
+main#content div#videosChannels ul#list li div#wrapper button#trackStatusButton:hover {
+    
+    background-color: var(--whitish);
+    color: var(--blackish);
+    opacity: 1;
+
+}
+
+main#content div#videosChannels ul#list li div#wrapper button#delete {
+    
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 26px;
+    height: 32px;
+    background-color: transparent;
+    background-image: var(--homeInterface);
+    background-position-x: -322px;
+    background-position-y: -234px;
+    background-repeat: no-repeat;
+    border: 0px;
+    outline: 0px;
+    cursor: hand;
+    cursor: pointer;
+
+}
+
+main#content div#videosChannels ul#list li div#wrapper button#delete:hover {
+    
+    opacity: 0.5;
+
+}
+
+main#content div#videosChannels ul#list li:hover div#wrapper button#delete {
+    
+    display: inline-flex;
+
+}
+
+/** Videos Channels START **/
+
