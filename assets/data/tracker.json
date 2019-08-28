@@ -1,0 +1,76 @@
+var json = {
+  "title": "MiddleEast Tracker",
+
+  "dates": {
+    "created": " 22-07-2018 . 05:30pm",
+    "modified": " 22-07-2018 . 05:30pm",
+    "crawled": " 22-07-2018 . 05:30pm",
+  },
+
+  "description": "Element represents a range of text that is set off from the normal text for some reason. Some examples include technical terms, foreign language phrases, or fictional character thoughts. It is typically displayed in italic type. An HTML element is an individual component of an HTML (Hypertext Markup Language) document or web page. HTML is composed of a tree of HTML nodes.",
+
+  "count": {
+    "statistics": "334K",
+    "channels": "43M",
+    "comments": "11B"
+  },
+
+
+  "videos":[
+    {
+    "photo": "assets/images/search/20.jpg",
+    "title": "Dwayne Johnson Reveals Kevin Hart's Awkward Teen Photo",
+    "channel": "Engadget",
+    "date": "May 20 2019 06:55 PM"
+    },
+    {
+    "photo": "assets/images/search/5.jpg",
+    "title": "Real Life Trick Shots 2 | Dude Perfect",
+    "channel": "Engadget",
+    "date": "May 20 2019 06:55 PM"
+    },
+    {
+    "photo": "assets/images/search/8.jpg",
+    "title": "IT CHAPTER TWO - Official Teaser Trailer [HD]",
+    "channel": "Engadget",
+    "date": "May 20 2019 06:55 PM"
+    },
+    {
+    "photo": "assets/images/search/10.jpg",
+    "title": "Winter Bear by V",
+    "channel": "Engadget",
+    "date": "May 20 2019 06:55 PM"
+    },
+    {
+    "photo": "assets/images/search/15.jpg",
+    "title": "Lil Dicky - Professional Rapper (Feat. Snoop Dogg)",
+    "channel": "Engadget",
+    "date": "May 20 2019 06:55 PM"
+    },
+    {
+    "photo": "assets/images/search/11.jpg",
+    "title": "Army Dogg",
+    "channel": "Buzzfeed",
+    "date": "May 20 2019 06:55 PM"
+    },
+    {
+    "photo": "assets/images/search/12.jpg",
+    "title": "pug's life",
+    "channel": "DogWorld",
+    "date": "May 20 2019 06:55 PM"
+    },
+    {
+    "photo": "assets/images/search/13.jpg",
+    "title": "Lottery 101",
+    "channel": "Financial times",
+    "date": "May 20 2019 06:55 PM"
+    },
+    {
+    "photo": "assets/images/search/14.jpg",
+    "title": "You're a bird Dee",
+    "channel": "It's always sunny",
+    "date": "May 20 2019 06:55 PM"
+    }
+    ]
+
+};

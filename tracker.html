@@ -8,15 +8,25 @@
 
     http://www.haydex.com/
     https://www.youtube.com/watch?v=QOlTGA3RE8I
-    
+
     Product Name: YouTubeTracker,
 	Description: Tracking YouTube"s data.
 	Beneficiary: COSMOS
-	
+
 	Copyright © 1992 - 2019 HAYDEX, All Rights Reserved.
-	
-	
-	
+
+
+
+-->
+<!--
+
+modified by Ojaswin Jain
+ojain@ualr.edu
+changelog:
+Modified html,js,css to make webpage dynamic
+changes:
+  delete buttons remove the video elements
+
 -->
 
 <html>
@@ -27,7 +37,7 @@
         <meta name="description" content="Tracking YouTube videos.">
         <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
         <title>Tracker - YouTubeTracker</title>
-        
+
         <!-- Favicons -->
         <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/youtubetracker-apple-touch-favicon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/youtubetracker-favicon-32x32.png">
@@ -35,12 +45,17 @@
 
         <!-- Stylesheets -->
         <link rel="stylesheet" href="assets/presentation/tracker.css"/>
-        
+        <link rel="stylesheet" href="assets/presentation/animate.css"/>
+
+
+        <script src="assets/behavior/jquery-3.4.1.min.js"></script>
+        <script src="assets/data/tracker.json"></script>
         <script src="assets/behavior/tracker.js"></script>
+
 
     </head>
     <body>
-        
+
         <!-- Header -->
         <header>
             <a href="landing.html" id="logo"></a>
@@ -79,7 +94,7 @@
         <!-- Content -->
         <main id="content">
             <div id="head">
-                <div id="title">Middle East Tracker</div>
+                <div id="title"><input type="text" value = "" id="titleIn" disabled></div>
                 <div id="tools">
                     <button id="analytics"><div id="icon"></div></button>
                     <button id="edit"><div id="icon"></div></button>
@@ -88,82 +103,125 @@
                 </div>
             </div>
             <div id="dates">
-                <div id="created">Created | 22-07-2018 . 05:30pm</div>
-                <div id="modified">Modified | 22-07-2018 . 05:30pm</div>
-                <div id="Crawled">Crawled | 22-07-2018 . 05:30pm</div>
+                <div id="created">Created | </div>
+                <div id="modified">Modified | </div>
+                <div id="crawled">Crawled | </div>
             </div>
-            <div id="description">Element represents a range of text that is set off from the normal text for some reason. Some examples include technical terms, foreign language phrases, or fictional character thoughts. It is typically displayed in italic type. An HTML element is an individual component of an HTML (Hypertext Markup Language) document or web page. HTML is composed
-            of a tree of HTML nodes.</div>
+            <div id="description"></div>
             <div id="statistics">
                 <div id="videos" class="metric">
-                    <div id="count">334K</div>
+                    <div class="count" id="statText"></div>
                     <div id="label">Videos</div>
                 </div>
                 <div id="channels" class="metric">
-                    <div id="count">43M</div>
+                    <div class="count" id="chanText"></div>
                     <div id="label">Channels</div>
                 </div>
                 <div id="comments" class="metric">
-                    <div id="count">11B</div>
+                    <div class="count" id="commText"></div>
                     <div id="label">Comments</div>
                 </div>
             </div>
             <div id="videosChannels">
                 <div id="label">List of Videos/Channels</div>
                 <ul id="list">
-                    <li id="video">
-                        <img id="photo" src="assets/images/search/20.jpg">
+                    <li class="video">
+                        <img id="photo" >
                         <div id="wrapper">
-                            <h2 id="title"><a href="">Dwayne Johnson Reveals Kevin Hart's Awkward Teen Photo</a></h2>
-                            <p id="channel">Engadget</p>
+                            <h2 id="title"><a href=""></a></h2>
+                            <p id="channel"></p>
                             <span id="separator">·</span>
-                            <p id="date">May 20 2019 06:55 PM</p>
+                            <p id="date"></p>
                             <button id="trackStatusButton" title="Click to see list of trackers.">0 TRACKS</button>
-                            <button id="delete"></button>
+                            <button id="delete" class="delete"></button>
                         </div>
                     </li>
-                    <li id="video">
-                        <img id="photo" src="assets/images/search/5.jpg">
+                    <li  class="video">
+                        <img id="photo" >
                         <div id="wrapper">
-                            <h2 id="title"><a href="">Real Life Trick Shots 2 | Dude Perfect</a></h2>
-                            <p id="channel">Engadget</p>
+                            <h2 id="title"><a href=""></a></h2>
+                            <p id="channel"></p>
                             <span id="separator">·</span>
-                            <p id="date">May 20 2019 06:55 PM</p>
+                            <p id="date"></p>
                             <button id="trackStatusButton" title="Click to see list of trackers.">0 TRACKS</button>
-                            <button id="delete"></button>
+                            <button id="delete" class="delete"></button>
                         </div>
                     </li>
-                    <li id="video">
-                        <img id="photo" src="assets/images/search/8.jpg">
+                    <li  class="video">
+                        <img id="photo" >
                         <div id="wrapper">
-                            <h2 id="title"><a href="">IT CHAPTER TWO - Official Teaser Trailer [HD]</a></h2>
-                            <p id="channel">Engadget</p>
+                            <h2 id="title"><a href=""></a></h2>
+                            <p id="channel"></p>
                             <span id="separator">·</span>
-                            <p id="date">May 20 2019 06:55 PM</p>
+                            <p id="date"></p>
                             <button id="trackStatusButton" title="Click to see list of trackers.">0 TRACKS</button>
-                            <button id="delete"></button>
+                            <button id="delete" class="delete"></button>
                         </div>
                     </li>
-                    <li id="video">
-                        <img id="photo" src="assets/images/search/10.jpg">
+                    <li  class="video">
+                        <img id="photo" >
                         <div id="wrapper">
-                            <h2 id="title"><a href="">Winter Bear by V</a></h2>
-                            <p id="channel">Engadget</p>
+                            <h2 id="title"><a href=""></a></h2>
+                            <p id="channel"></p>
                             <span id="separator">·</span>
-                            <p id="date">May 20 2019 06:55 PM</p>
+                            <p id="date"></p>
                             <button id="trackStatusButton" title="Click to see list of trackers.">0 TRACKS</button>
-                            <button id="delete"></button>
+                            <button id="delete" class="delete"></button>
                         </div>
                     </li>
-                    <li id="video">
-                        <img id="photo" src="assets/images/search/15.jpg">
+                    <li  class="video">
+                        <img id="photo" >
                         <div id="wrapper">
-                            <h2 id="title"><a href="">Lil Dicky - Professional Rapper (Feat. Snoop Dogg)</a></h2>
-                            <p id="channel">Engadget</p>
+                            <h2 id="title"><a href=""></a></h2>
+                            <p id="channel"></p>
                             <span id="separator">·</span>
-                            <p id="date">May 20 2019 06:55 PM</p>
+                            <p id="date"></p>
                             <button id="trackStatusButton" title="Click to see list of trackers.">0 TRACKS</button>
-                            <button id="delete"></button>
+                            <button id="delete" class="delete"></button>
+                        </div>
+                    </li>
+                    <li  class="video">
+                        <img id="photo" >
+                        <div id="wrapper">
+                            <h2 id="title"><a href=""></a></h2>
+                            <p id="channel"></p>
+                            <span id="separator">·</span>
+                            <p id="date"></p>
+                            <button id="trackStatusButton" title="Click to see list of trackers.">0 TRACKS</button>
+                            <button id="delete" class="delete"></button>
+                        </div>
+                    </li>
+                    <li  class="video">
+                        <img id="photo" >
+                        <div id="wrapper">
+                            <h2 id="title"><a href=""></a></h2>
+                            <p id="channel"></p>
+                            <span id="separator">·</span>
+                            <p id="date"></p>
+                            <button id="trackStatusButton" title="Click to see list of trackers.">0 TRACKS</button>
+                            <button id="delete" class="delete"></button>
+                        </div>
+                    </li>
+                    <li  class="video">
+                        <img id="photo" >
+                        <div id="wrapper">
+                            <h2 id="title"><a href=""></a></h2>
+                            <p id="channel"></p>
+                            <span id="separator">·</span>
+                            <p id="date"></p>
+                            <button id="trackStatusButton" title="Click to see list of trackers.">0 TRACKS</button>
+                            <button id="delete" class="delete"></button>
+                        </div>
+                    </li>
+                    <li  class="video">
+                        <img id="photo" >
+                        <div id="wrapper">
+                            <h2 id="title"><a href=""></a></h2>
+                            <p id="channel"></p>
+                            <span id="separator">·</span>
+                            <p id="date"></p>
+                            <button id="trackStatusButton" title="Click to see list of trackers.">0 TRACKS</button>
+                            <button id="delete" class="delete"></button>
                         </div>
                     </li>
                 </ul>
